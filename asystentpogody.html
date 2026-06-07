@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather AI Assistant - Twój Doradca Ubioru</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="background-decor bg-top-left"></div>
+    <div class="background-decor bg-bottom-right"></div>
+
+    <main class="chat-container" role="main" aria-label="Okno asystenta pogodowego AI">
+        <header class="chat-header">
+            <div class="bot-info">
+                <div class="bot-avatar-container">
+                    <i class="fa-solid fa-robot"></i>
+                    <span class="status-indicator" aria-label="Status: online"></span>
+                </div>
+                <div>
+                    <h1>AuraStyle AI</h1>
+                    <p>Inteligentny doradca pogodowy</p>
+                </div>
+            </div>
+            <button id="theme-toggle" class="icon-btn" aria-label="Przełącz motyw ciemny/jasny" title="Zmień motyw">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </header>
+
+        <section id="chat-box" class="chat-box" aria-live="polite" aria-label="Historia rozmowy">
+            <div class="message bot-message">
+                <div class="message-content">
+                    Witaj! Jestem Twoim inteligentnym asystentem modowo-pogodowym. 🌤️<br><br>
+                    Napisz mi, jaka jest u Ciebie pogoda (np. <strong>"Jest 7 stopni i pada deszcz"</strong> lub <strong>"25 stopni, pełne słońce"</strong>), albo wpisz nazwę miasta (np. <strong>"Warszawa"</strong>), abym sam sprawdził aktualne warunki!
+                </div>
+            </div>
+        </section>
+
+        <div id="typing-indicator" class="typing-indicator hidden" aria-hidden="true">
+            <span></span><span></span><span></span>
+        </div>
+
+        <footer class="chat-input-area">
+            <div class="input-wrapper">
+                <input type="text" id="user-input" placeholder="Wpisz opis pogody lub nazwę miasta..." aria-label="Wpisz treść wiadomości" autocomplete="off">
+                <button id="send-btn" onclick="sendMessage()" aria-label="Wyślij wiadomość">
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
